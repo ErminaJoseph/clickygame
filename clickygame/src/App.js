@@ -13,10 +13,27 @@ class App extends Component {
     count: 0
   }
   
-  // gameLogic = id => {
-  //   const friends = this.state.friends.filter(friend => friend.id !== id);
-  //   this.setState({ friends });
-  // };
+  calculateScore = () => {
+    this.setState({ count: this.state.count + 1 });
+
+    if (this.state.count === 2 || this.state.score === 12) {
+      this.setState({ count: 0 });
+      this.setState({ totalScore: this.state.totalScore + this.state.score });
+      this.setState({ score: 0 })
+    } else {
+      this.setState({ score: this.state.score + 1 });
+    }
+
+    this.randomizeCharacters();
+  };
+
+  randomizeCharacters = a => {
+    for (let i = a.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [a[i], a[j]] = [a[j], a[i]];
+    }
+    this.setState( {characters:a} );
+}
 
   render () {
     return (
@@ -26,6 +43,7 @@ class App extends Component {
           <CharacterCard
           id={character.id}
           image={character.image}
+          calculateScore={this.calculateScore}
         />
         ))}
       </Wrapper>
