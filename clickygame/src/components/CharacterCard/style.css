@@ -1,0 +1,15 @@
+.container {
+    padding-left: 60px;
+}
+
+.card {
+    height: 300px;
+    width: 300px;
+    float: left;
+    margin: 5px;
+}
+
+img {
+    height: 290px;
+    width: 290px;
+}
