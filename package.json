@@ -1,8 +1,0 @@
-{
-  "name": "clickygame",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "gh-pages": "^2.2.0"
-  }
-}
