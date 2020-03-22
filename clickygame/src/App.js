@@ -24,7 +24,7 @@ class App extends Component {
       this.setState({ score: this.state.score + 1 });
     }
 
-    this.randomizeCharacters();
+    this.randomizeCharacters(characters);
   };
 
   randomizeCharacters = a => {
